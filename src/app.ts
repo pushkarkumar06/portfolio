@@ -5,6 +5,9 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import authRoutes from "./modules/auth/auth.routes";
 import projectRoutes from "./modules/project/project.routes";
+import blogRoutes from "./modules/blog/blog.routes";
+import analyticsRoutes from "./modules/analytics/analytics.routes";
+import adminRoutes from "./modules/admin/admin.routes";
 
 import { errorHandler } from "./middlewares/error.middleware";
 
@@ -25,6 +28,9 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/projects", projectRoutes);
+app.use("/api/v1/blogs", blogRoutes);
+app.use("/api/v1/analytics", analyticsRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 
 // Error handler middleware
